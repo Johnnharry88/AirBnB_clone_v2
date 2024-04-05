@@ -13,11 +13,11 @@ def do_pack():
     """Create a tar gzipped archive of the directory web_static."""
     dtx = datetime.utcnow()
     pkfile = "versions/web_static_{}{}{}{}{}{}.tgz".format(dtx.year,
-                                                         dtx.month,
-                                                         dtx.day,
-                                                         dtx.hour,
-                                                         dtx.minute,
-                                                         dtx.second)
+                                                           dtx.month,
+                                                           dtx.day,
+                                                           dtx.hour,
+                                                           dtx.minute,
+                                                           dtx.second)
     if os.path.isdir("versions") is False:
         if local("mkdir -p versions").failed is True:
             return None
@@ -68,7 +68,7 @@ def do_deploy(archive_path):
 
 def deploy():
     """Create and distribute an archive to a web server."""
-    alx = do_pack()
-    if alx is None:
+    file = do_pack()
+    if file is None:
         return False
-    return do_deploy(alx)
+    return do_deploy(file)
