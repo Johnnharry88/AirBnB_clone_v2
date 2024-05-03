@@ -13,6 +13,7 @@ def close(self):
     """Method that closes the session"""
     storage.close()
 
+
 @app.route('/cities_by_states', strict_slashes=False)
 def cities_by_states():
     """Shows off A HTML page with states and cities"""
