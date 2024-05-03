@@ -17,7 +17,7 @@ def close(self):
 def cities_by_states():
     """Shows off A HTML page with states and cities"""
     states_db = storage.all(State)
-    return render_template('8-cities_by_states.html', states=states)
+    return render_template('8-cities_by_states.html', states=states_db)
 
 
 if __name__ == '__main__':
